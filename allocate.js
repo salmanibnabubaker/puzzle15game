@@ -4,7 +4,7 @@
 
 //if i is already used  element at i-1 th index would be set to 1 else it would be 0 (i=0 to i=14)
 //initially it is set to 0s
-let already_used=[],length_array=15;
+let already_used=[],length_array=16;
 let array=[];
 for(let i=0;i<length_array;i++){
     already_used.push(0);
@@ -29,4 +29,14 @@ for(let i=0;i<length_array;i++){
         }
     }
 }
-console.log(array);
+let StateArray=[];
+for(let i=0;i<length_array;i++){
+    StateArray.push({id:i+1,num:array[i]});
+}
+let EmptyIndex;
+for(let i=0;i<length_array;i++){
+    if(StateArray[i].num==length_array){
+        EmptyIndex=StateArray[i].id-1;
+        break;
+    }
+}
